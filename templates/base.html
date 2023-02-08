@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block 'title' %}{% endblock %} | School Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        label{
+            display: block;
+        }
+        input,select,textarea{
+         border: 1px solid gray;
+         padding: 10px 5px;
+         border-radius: 4px;
+         
+
+        }
+    </style>
+</head>
+<body>
+    <!-- header section-->
+    <div class="flex bg-blue-700 px-3 py-4 text-white justify-between ">
+        <h1 class="text-white text-xl font-bold">School Workspace</h1>
+
+        <div class="flex gap-2 items-center">
+            <a href="{% url 'homepage'%}" class="">Home</a>
+            <a href="{% url 'login'%}" class="">Login</a>
+            <a href="{% url 'apply'%}" class="">Apply</a>
+          
+        </div>
+    </div>
+
+    {% block 'content' %}
+    {% endblock %}
+
+    <div class="flex fixed bottom-0 w-full bg-black justify-center py-2">
+        <p class="text-white text-xs">
+            This web app is created by AKKEY.
+        </p>
+    </div>
+</body>
+</html>
